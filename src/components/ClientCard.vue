@@ -28,8 +28,8 @@
     </div>
     <div class="card-footer">
       <div class="card-assignees">
-        <div class="card-assignees-number"> {{ assigneData.length }} </div>
-        <img :src="'../assets/' + assigneData[assigneData.length - 1]?.image"/>
+        <div class="card-assignees-number" v-if="assigneData.length - 1"> +{{ assigneData.length - 1 }} </div>
+        <img :src="'/src/assets/' + assigneData[assigneData.length - 1]?.image"/>
       </div>
       <div class="card-nav">
         <div class="card-nav-alert">
@@ -154,14 +154,21 @@ input {
   display: flex;
 }
 
+.card-assignees img {
+  width: 37px;
+  height: 37px;
+  border-radius: 50px;
+}
+
 .card-assignees-number {
   padding: 5px;
-  border-radius: 10px;
-  height: 10px;
-  width: 10px;
+  border-radius: 25px;
+  height: 25px;
+  width: 25px;
   text-align: center;
-  line-height: 10px;
+  line-height: 25px;
   border: 1px solid gray;
+  margin-right: -5px;
 }
 
 .d-flex {
